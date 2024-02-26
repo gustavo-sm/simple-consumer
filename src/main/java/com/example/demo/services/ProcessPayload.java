@@ -18,7 +18,7 @@ public class ProcessPayload {
             System.out.println(decisaoCredito.getPayloadInput());
 
         } catch (Exception e){
-            e.printStackTrace();
+            e.printStackTrace(); //Substituir por LOGGER
         }
     }
 }
