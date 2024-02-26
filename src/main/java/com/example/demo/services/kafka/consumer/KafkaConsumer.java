@@ -1,6 +1,6 @@
 package com.example.demo.services.kafka.consumer;
 
-import com.example.demo.helpers.ProcessPayload;
+import com.example.demo.services.ProcessPayload;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;

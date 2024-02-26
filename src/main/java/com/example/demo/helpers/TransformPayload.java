@@ -12,9 +12,13 @@ public class TransformPayload {
     public TransformPayload(){
         this.payloadObj = new PayloadDecisaoCredito();
     }
-    public PayloadDecisaoCredito parsePayload(String payload) throws JsonParseException, JsonProcessingException {
-        System.out.println("PAYLOAD CONSUMIDO "+payload);
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(payload, this.payloadObj.getClass());
+    public PayloadDecisaoCredito parsePayload(String payload) {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return objectMapper.readValue(payload, this.payloadObj.getClass());
+        } catch (JsonParseException | JsonProcessingException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
