@@ -16,6 +16,7 @@ public class ProcessPayload {
             PayloadDecisaoCredito decisaoCredito = transform.parsePayload(payload);
             PayloadIdentificacao identificacao = decisaoCredito.getIdentificacao();
             System.out.println(decisaoCredito.getPayloadInput());
+
         } catch (Exception e){
             e.printStackTrace();
         }

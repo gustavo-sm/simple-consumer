@@ -13,4 +13,3 @@ public class PayloadIdentificacao {
     private String tipoPessoa;
     private String dataHoraExecucao;
 }
-// https://stackoverflow.com/questions/47262363/consider-marking-one-of-the-beans-as-primary
