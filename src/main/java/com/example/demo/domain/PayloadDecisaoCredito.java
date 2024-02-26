@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 @Getter @Setter
 @Component
-@Primary
 public class PayloadDecisaoCredito {
     private PayloadIdentificacao identificacao;
     private String payloadInput;
