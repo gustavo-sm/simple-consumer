@@ -2,7 +2,6 @@ package com.example.demo.services;
 
 import com.example.demo.domain.PayloadDecisaoCredito;
 import com.example.demo.domain.PayloadIdentificacao;
-import com.example.demo.helpers.TransformPayload;
 import org.springframework.stereotype.Component;
 
 @Component
