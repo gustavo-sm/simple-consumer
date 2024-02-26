@@ -4,16 +4,15 @@ package com.example.demo.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Map;
-import com.example.demo.domain.IPayload;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
 @Getter @Setter
-@Service
-public class PayloadDecisaoCredito implements IPayload {
-    private Map<String, String> identificacao;
-    private String PayloadInput;
-    private String PayloadOutput;
-    private String PoliticaDMP;
+@Component
+@Primary
+public class PayloadDecisaoCredito {
+    private PayloadIdentificacao identificacao;
+    private String payloadInput;
+    private String payloadOutput;
+    private String politicaDMP;
 }

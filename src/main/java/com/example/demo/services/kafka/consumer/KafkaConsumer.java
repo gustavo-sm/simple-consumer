@@ -13,7 +13,7 @@ public class KafkaConsumer {
     @KafkaListener(topics = "topicotest")
     public void eventListener(@Payload ConsumerRecord<String, String> payloadRecord, Acknowledgment ack) throws JsonProcessingException {
         String receivedPayload = payloadRecord.value();
-        ProcessPayload.processPayload(receivedPayload, new PayloadDecisaoCredito());
+        ProcessPayload.processPayload(receivedPayload);
         ack.acknowledge();
     }
 }
