@@ -1,4 +1,4 @@
-package com.example.demo.services.kafka.consumer.config;
+package com.example.demo.messaging.kafka.consumer.config;
 
 import lombok.Getter;
 import lombok.Setter;

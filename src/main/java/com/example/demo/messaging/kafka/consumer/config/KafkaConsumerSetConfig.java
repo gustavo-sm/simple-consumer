@@ -1,6 +1,6 @@
-package com.example.demo.services.kafka.consumer.config;
+package com.example.demo.messaging.kafka.consumer.config;
 
-import com.example.demo.services.kafka.consumer.Interceptor;
+import com.example.demo.messaging.kafka.consumer.Interceptor;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

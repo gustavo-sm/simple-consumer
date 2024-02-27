@@ -1,4 +1,4 @@
-package com.example.demo.services.kafka.consumer;
+package com.example.demo.messaging.kafka.consumer;
 
 import com.example.demo.services.ProcessPayload;
 import org.apache.kafka.clients.consumer.ConsumerRecord;

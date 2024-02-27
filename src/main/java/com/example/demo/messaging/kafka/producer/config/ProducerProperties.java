@@ -1,4 +1,4 @@
-package com.example.demo.services.kafka.producer.config;
+package com.example.demo.messaging.kafka.producer.config;
 
 import lombok.Getter;
 import lombok.Setter;

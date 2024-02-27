@@ -1,10 +1,9 @@
-package com.example.demo.domain;
+package com.example.demo.entities;
 
 
 import lombok.Getter;
 import lombok.Setter;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Getter @Setter

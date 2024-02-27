@@ -1,6 +1,6 @@
 package com.example.demo.services;
 
-import com.example.demo.domain.PayloadDecisaoCredito;
+import com.example.demo.entities.PayloadDecisaoCredito;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.boot.json.JsonParseException;

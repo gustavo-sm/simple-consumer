@@ -1,4 +1,4 @@
-package com.example.demo.services.kafka.producer;
+package com.example.demo.messaging.kafka.producer;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

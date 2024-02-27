@@ -1,4 +1,4 @@
-package com.example.demo.services.kafka.consumer;
+package com.example.demo.messaging.kafka.consumer;
 
 
 import org.apache.kafka.clients.consumer.ConsumerInterceptor;
