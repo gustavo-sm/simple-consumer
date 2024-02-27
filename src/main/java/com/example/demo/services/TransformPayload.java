@@ -21,4 +21,10 @@ public class TransformPayload {
             return null;
         }
     }
+
+    public String stringifyPayload(PayloadDecisaoCredito payload) throws JsonProcessingException, NullPointerException{
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonString = mapper.writeValueAsString(payload);
+        return jsonString;
+    }
 }
