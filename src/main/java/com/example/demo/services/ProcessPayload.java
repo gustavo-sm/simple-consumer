@@ -16,9 +16,14 @@ public class ProcessPayload {
             PayloadDecisaoCredito decisaoCredito = transform.parsePayload(payload);
             PayloadIdentificacao identificacao = decisaoCredito.getIdentificacao();
             System.out.println(decisaoCredito.getPayloadInput());
+            System.out.println(decisaoCredito.getPayloadOutput());
+            System.out.println(identificacao.getPessoa());
+            System.out.println(identificacao.getDataHoraExecucao());
+            System.out.println(transform.stringifyPayload(decisaoCredito));
 
         } catch (Exception e){
             e.printStackTrace(); //Substituir por LOGGER
         }
     }
+
 }
