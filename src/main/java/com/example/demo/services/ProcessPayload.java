@@ -19,7 +19,7 @@ public class ProcessPayload {
             System.out.println(decisaoCredito.getPayloadOutput());
             System.out.println(identificacao.getPessoa());
             System.out.println(identificacao.getDataHoraExecucao());
-            System.out.println(transform.stringifyPayload(decisaoCredito));
+            System.out.println(decisaoCredito);
 
         } catch (Exception e){
             e.printStackTrace(); //Substituir por LOGGER
