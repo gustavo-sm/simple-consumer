@@ -6,8 +6,9 @@ import com.example.demo.entities.PayloadIdentificacao;
 import com.example.demo.repositories.PayloadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class ProcessPayload {
     @Autowired
     private DynamoDBConfig dynamoDBConfig;

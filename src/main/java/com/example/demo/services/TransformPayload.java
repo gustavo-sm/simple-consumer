@@ -2,16 +2,18 @@ package com.example.demo.services;
 
 import com.example.demo.entities.PayloadDecisaoCredito;
 import com.example.demo.entities.PayloadIdentificacao;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.boot.json.JsonParseException;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 
-@Component
+@Service
 public class TransformPayload {
     private final PayloadDecisaoCredito payloadObj;
     public TransformPayload(){
