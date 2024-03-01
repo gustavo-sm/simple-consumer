@@ -56,7 +56,7 @@ public class KafkaConsumerSetConfig {
                 new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
         factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
-        factory.setConcurrency(3);
+        factory.setConcurrency(10);
         return factory;
     }
 }
