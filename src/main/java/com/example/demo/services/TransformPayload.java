@@ -1,6 +1,8 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.PayloadDecisaoCredito;
+import com.example.demo.entities.PayloadIdentificacao;
+import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.commons.text.StringEscapeUtils;
@@ -25,12 +27,18 @@ public class TransformPayload {
 
             String escaped = payload
                                 .replace("\"{", "{")
-                                    .replace("}\"", "}");
+                                    .replace("}\"", "}")
+                                        .replace("\"[","[")
+                                            .replace("]\"","]");
+
 
             HashMap<String, Object> map = mapper.readValue(escaped, HashMap.class);
+            PayloadIdentificacao identificacao = mapper.readValue(mapper.writeValueAsString(map.get("identificacao")), PayloadIdentificacao.class);
+            map.put("transacao", identificacao.getTransacao());
+            map.put("payloadInput", mapper.writeValueAsString(map.get("payloadInput")));
+            map.put("payloadOutput", mapper.writeValueAsString(map.get("payloadOutput")));
+            map.put("politicaDMP", mapper.writeValueAsString(map.get("politicaDMP")));
 
-            map.put("payloadInput", StringEscapeUtils.escapeJson(mapper.writeValueAsString(map.get("payloadInput"))));
-            map.put("payloadOutput", StringEscapeUtils.escapeJson(mapper.writeValueAsString(map.get("payloadOutput"))));
             return mapper.readValue(mapper.writeValueAsString(map), PayloadDecisaoCredito.class);
 
         } catch (JsonParseException | JsonProcessingException  e) {

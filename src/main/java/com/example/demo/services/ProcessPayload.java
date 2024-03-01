@@ -1,12 +1,17 @@
 package com.example.demo.services;
 
+import com.example.demo.database.DynamoDBConfig;
 import com.example.demo.entities.PayloadDecisaoCredito;
 import com.example.demo.entities.PayloadIdentificacao;
+import com.example.demo.repositories.PayloadRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ProcessPayload {
-    public static void processPayload(String payload)  {
+    @Autowired
+    private DynamoDBConfig dynamoDBConfig;
+    public void processPayload(String payload)  {
         try {
             if (payload == null || payload.trim().isEmpty()) {
                 System.out.println("Mensagem vazia");
@@ -14,12 +19,8 @@ public class ProcessPayload {
             }
             TransformPayload transform = new TransformPayload();
             PayloadDecisaoCredito decisaoCredito = transform.parsePayload(payload);
-            PayloadIdentificacao identificacao = decisaoCredito.getIdentificacao();
-            System.out.println(decisaoCredito.getPayloadInput());
-            System.out.println(decisaoCredito.getPayloadOutput());
-            System.out.println(identificacao.getPessoa());
-            System.out.println(identificacao.getDataHoraExecucao());
-            System.out.println(decisaoCredito);
+            PayloadRepository payloadRepository = new PayloadRepository(dynamoDBConfig.dynamoDBMapper());
+            payloadRepository.createRegistry(decisaoCredito);
 
         } catch (Exception e){
             e.printStackTrace(); //Substituir por LOGGER
